@@ -1,6 +1,12 @@
 <?php 
+
+function generatePwd(){
+    return "ciaociao";
+}
+
+
 if(isset($_GET["pwdLength"])){
-    $newPwd = "HELLO";
+    $newPwd = generatePwd();
 }
 ?>
 
