@@ -1,12 +1,26 @@
 <?php 
 
-function generatePwd(){
-    return "ciaociao";
+function generatePwd($length){
+    $newPwd = "";
+
+    $lettersRange = "abcdefghijklmnopqrstuvwxyz";
+    $lettersLen = strlen($lettersRange);
+
+    for ($i=0; $i < $length; $i++) { 
+        $randomNum = rand(0,$lettersLen-1);
+        $currentLetter = $lettersRange[$randomNum];
+        $newPwd .= $currentLetter;
+    }
+
+
+
+    return $newPwd;
 }
 
 
 if(isset($_GET["pwdLength"])){
-    $newPwd = generatePwd();
+    $pwdLen = $_GET["pwdLength"];
+    $newPwd = generatePwd($pwdLen);
 }
 ?>
 
