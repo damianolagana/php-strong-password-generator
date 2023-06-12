@@ -1,3 +1,9 @@
+<?php 
+if(isset($_GET["pwdLength"])){
+    $newPwd = "HELLO";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +21,13 @@
                 <h1 class="mb-3">STRONG Password Generator</h1>
                 <h2>Genera una password Sicura</h2>
             </div>
+            <div class="alert alert-dark text-center" role="alert">
+                <?php echo $newPwd ?>
+            </div>
             <div class="col-12 text-center">
               <form action="index.php" method="get">
                 <label for="pwdLength">Lunghezza password:</label>
-                <input type="number" name="pwdLength" placeholder="Inserisci un numero">
+                <input class="w-25" type="number" name="pwdLength" placeholder="Inserisci un numero" min="8" max="32">
 
                 <button type="submit" class="btn btn-light ms-3 ">Invia</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
