@@ -6,11 +6,12 @@ function generatePwd($length){
     $lettersRange = "abcdefghijklmnopqrstuvwxyz";
     
     $upperLetters = strtoupper($lettersRange);
-    $lettersLen = strlen($lettersRange);
     $numbers = "0123456789";
-    $symbols = "!$%&/(){}[]#§*@£"
-
+    $symbols = "!$%&/(){}[]#§*@£";
+    
     $fullPsw = $lettersRange . $upperLetters . $numbers . $symbols;
+    
+    $lettersLen = strlen($fullPsw);
 
     for ($i=0; $i < $length; $i++) { 
         $randomNum = rand(0,$lettersLen-1);
@@ -48,7 +49,7 @@ if(isset($_GET["pwdLength"])){
                 <h2>Genera una password Sicura</h2>
             </div>
             <div class="alert alert-dark text-center" role="alert">
-                <?php echo $newPwd ?>
+                La tua nuova Password: <?php echo $newPwd ?>
             </div>
             <div class="col-12 text-center">
               <form action="index.php" method="get">
