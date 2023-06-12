@@ -4,11 +4,17 @@ function generatePwd($length){
     $newPwd = "";
 
     $lettersRange = "abcdefghijklmnopqrstuvwxyz";
+    
+    $upperLetters = strtoupper($lettersRange);
     $lettersLen = strlen($lettersRange);
+    $numbers = "0123456789";
+    $symbols = "!$%&/(){}[]#§*@£"
+
+    $fullPsw = $lettersRange . $upperLetters . $numbers . $symbols;
 
     for ($i=0; $i < $length; $i++) { 
         $randomNum = rand(0,$lettersLen-1);
-        $currentLetter = $lettersRange[$randomNum];
+        $currentLetter = $fullPsw[$randomNum];
         $newPwd .= $currentLetter;
     }
 
