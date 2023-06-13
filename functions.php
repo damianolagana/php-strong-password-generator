@@ -20,6 +20,6 @@ function generatePwd($length){
 
 
 
-    return $newPwd . "TEST";
+    return $newPwd ;
 }
 ?>
